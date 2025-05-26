@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { color, motion } from 'framer-motion';
 import { Bus, MapPin, Cpu, Radio, BarChart4, Globe, Users } from 'lucide-react';
-
+import Ezhil from '../assets/Ezhil.jpeg';
 const AboutPage = () => {
   useEffect(() => {
     document.title = 'About - Tirunelveli Bus Tracker';
@@ -54,7 +54,7 @@ const AboutPage = () => {
                     <h3 className="font-semibold text-gray-800">Computer Vision</h3>
                   </div>
                   <p className="text-gray-700 text-sm">
-                    YOLOv5 object detection model processes USB camera feeds to count passengers
+                   Google Open Source  object detection model processes USB camera feeds to count passengers
                     and detect available seats, enabling crowding analysis.
                   </p>
                 </div>
@@ -68,7 +68,7 @@ const AboutPage = () => {
                   </div>
                   <p className="text-gray-700 text-sm">
                     Sensor data is transmitted via wireless communication to our backend systems,
-                    where it's processed, analyzed, and stored in MongoDB.
+                    where it's processed, analyzed, and stored in Thingspeak Cloud.
                   </p>
                 </div>
                 
@@ -115,11 +115,11 @@ const AboutPage = () => {
                   <p className="text-xs text-gray-600">Frontend framework</p>
                 </div>
                 <div className="bg-gray-50 p-3 rounded border border-gray-200 text-center">
-                  <p className="font-medium text-gray-800">MongoDB</p>
-                  <p className="text-xs text-gray-600">Database</p>
+                  <p className="font-medium text-gray-800">Thingspeak</p>
+                  <p className="text-xs text-gray-600">Cloud</p>
                 </div>
                 <div className="bg-gray-50 p-3 rounded border border-gray-200 text-center">
-                  <p className="font-medium text-gray-800">YOLOv5</p>
+                  <p className="font-medium text-gray-800">Google open source</p>
                   <p className="text-xs text-gray-600">Object detection</p>
                 </div>
                 <div className="bg-gray-50 p-3 rounded border border-gray-200 text-center">
@@ -127,7 +127,7 @@ const AboutPage = () => {
                   <p className="text-xs text-gray-600">GPS module</p>
                 </div>
                 <div className="bg-gray-50 p-3 rounded border border-gray-200 text-center">
-                  <p className="font-medium text-gray-800">Leaflet</p>
+                  <p className="font-medium text-gray-800">Google Map</p>
                   <p className="text-xs text-gray-600">Mapping library</p>
                 </div>
                 <div className="bg-gray-50 p-3 rounded border border-gray-200 text-center">
@@ -165,11 +165,38 @@ const AboutPage = () => {
 </a>
 
                 </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                 <div className="bg-white p-4 rounded-lg border border-gray-200 text-center">
+                  <div className="w-30 h-30 bg-gray-200 rounded-full mx-auto mb-3">
+                  <img
+        src={Ezhil}
+        alt="My Profile"
+        className="w-30 h-30 rounded-full shadow-lg"
+      />
+                  </div>
+                  <h3 className="font-semibold text-gray-800">Ezhilarasu S</h3>
+                  <p className="text-sm text-gray-600">Project Report Writer</p>
+                  {/* <a 
+  href="http://ranjithm.netlify.app/" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  style={{
+    color: 'blue',
+    textDecoration: 'underline',
+    fontSize: '0.8rem',          // smaller text
+    fontFamily: '"Space Mono", monospace',  // unique monospaced font
+    fontWeight: '500'            // slightly bold
+  }}
+>
+  portfolio
+</a> */}
+
+                </div>
+                {/* <div className="bg-white p-4 rounded-lg border border-gray-200 text-center">
                   <div className="w-20 h-20 bg-gray-200 rounded-full mx-auto mb-3"></div>
                   <h3 className="font-semibold text-gray-800">Ezhilarasu </h3>
                   <p className="text-sm text-gray-600">Project Report writer</p>
-                </div>
+                </div> */}
                
               </div>
             </div>
