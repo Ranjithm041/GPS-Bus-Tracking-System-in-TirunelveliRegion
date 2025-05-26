@@ -121,11 +121,11 @@ const AboutPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 {/* Member 1 */}
                 <div className="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                  <div className="w-28 h-28 bg-gray-200 rounded-full mx-auto mb-3 overflow-hidden">
+                  <div className="w-30 h-30 bg-gray-200 rounded-full mx-auto mb-3 ">
                     <img
                       src="https://ranjithm.netlify.app/assets/mypic-k9MameKu.jpg"
                       alt="Ranjith M"
-                      className="w-full h-full object-cover rounded-full shadow-lg"
+                      className="w-30 h-30 rounded-full shadow-lg"
                     />
                   </div>
                   <h3 className="font-semibold text-gray-800">Ranjith M</h3>
@@ -142,11 +142,11 @@ const AboutPage = () => {
 
                 {/* Member 2 */}
                 <div className="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                  <div className="w-28 h-28 bg-gray-200 rounded-full mx-auto mb-3 overflow-hidden">
+                  <div className="w-30 h-30 bg-gray-200 rounded-full mx-auto mb-3">
                     <img
                       src={Ezhil}
                       alt="Ezhilarasu S"
-                      className="w-full h-full object-cover rounded-full shadow-lg"
+                      className="w-30 h-30 rounded-full shadow-lg"
                     />
                   </div>
                   <h3 className="font-semibold text-gray-800">Ezhilarasu S</h3>
