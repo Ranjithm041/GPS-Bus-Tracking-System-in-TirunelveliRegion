@@ -1,7 +1,16 @@
 import { useEffect } from 'react';
-import { color, motion } from 'framer-motion';
-import { Bus, MapPin, Cpu, Radio, BarChart4, Globe, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
+import {
+  Bus,
+  MapPin,
+  Cpu,
+  Radio,
+  BarChart4,
+  Globe,
+  Users
+} from 'lucide-react';
 import Ezhil from '../assets/Ezhil.jpeg';
+
 const AboutPage = () => {
   useEffect(() => {
     document.title = 'About - Tirunelveli Bus Tracker';
@@ -22,72 +31,54 @@ const AboutPage = () => {
               GPS-based Bus Tracking System for Tirunelveli Region
             </p>
           </div>
-          
+
           <div className="p-6">
             <div className="prose max-w-none">
               <p className="lead text-lg text-gray-700">
-                This project is a final year academic initiative that combines hardware sensors, computer vision, 
+                This project is a final-year academic initiative that combines hardware sensors, computer vision,
                 and web technologies to create a comprehensive bus tracking system for the Tirunelveli region.
               </p>
-              
+
+              {/* How It Works Section */}
               <h2 className="text-xl font-semibold mt-6 mb-4 text-gray-800">How It Works</h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                  <div className="flex items-center mb-3">
-                    <div className="p-2 bg-primary-100 text-primary-600 rounded-full mr-3">
-                      <Globe className="h-6 w-6" />
+                {[
+                  {
+                    Icon: Globe,
+                    title: 'GPS Tracking',
+                    desc: 'GPS neo 6M modules installed on each bus collect real-time location data, sending coordinates, speed, and direction information to our servers.'
+                  },
+                  {
+                    Icon: Cpu,
+                    title: 'Computer Vision',
+                    desc: 'Google Open Source object detection model processes USB camera feeds to count passengers and detect available seats, enabling crowding analysis.'
+                  },
+                  {
+                    Icon: Radio,
+                    title: 'Data Transmission',
+                    desc: 'Sensor data is transmitted via wireless communication to our backend systems, where it\'s processed, analyzed, and stored in Thingspeak Cloud.'
+                  },
+                  {
+                    Icon: BarChart4,
+                    title: 'Data Processing',
+                    desc: 'Our backend analyzes the data to calculate arrival times, optimize routes, and identify potential service improvements.'
+                  }
+                ].map(({ Icon, title, desc }) => (
+                  <div key={title} className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                    <div className="flex items-center mb-3">
+                      <div className="p-2 bg-primary-100 text-primary-600 rounded-full mr-3">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="font-semibold text-gray-800">{title}</h3>
                     </div>
-                    <h3 className="font-semibold text-gray-800">GPS Tracking</h3>
+                    <p className="text-gray-700 text-sm">{desc}</p>
                   </div>
-                  <p className="text-gray-700 text-sm">
-                    GPS neo 6M modules installed on each bus collect real-time location data, 
-                    sending coordinates, speed, and direction information to our servers.
-                  </p>
-                </div>
-                
-                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                  <div className="flex items-center mb-3">
-                    <div className="p-2 bg-primary-100 text-primary-600 rounded-full mr-3">
-                      <Cpu className="h-6 w-6" />
-                    </div>
-                    <h3 className="font-semibold text-gray-800">Computer Vision</h3>
-                  </div>
-                  <p className="text-gray-700 text-sm">
-                   Google Open Source  object detection model processes USB camera feeds to count passengers
-                    and detect available seats, enabling crowding analysis.
-                  </p>
-                </div>
-                
-                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                  <div className="flex items-center mb-3">
-                    <div className="p-2 bg-primary-100 text-primary-600 rounded-full mr-3">
-                      <Radio className="h-6 w-6" />
-                    </div>
-                    <h3 className="font-semibold text-gray-800">Data Transmission</h3>
-                  </div>
-                  <p className="text-gray-700 text-sm">
-                    Sensor data is transmitted via wireless communication to our backend systems,
-                    where it's processed, analyzed, and stored in Thingspeak Cloud.
-                  </p>
-                </div>
-                
-                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                  <div className="flex items-center mb-3">
-                    <div className="p-2 bg-primary-100 text-primary-600 rounded-full mr-3">
-                      <BarChart4 className="h-6 w-6" />
-                    </div>
-                    <h3 className="font-semibold text-gray-800">Data Processing</h3>
-                  </div>
-                  <p className="text-gray-700 text-sm">
-                    Our backend analyzes the data to calculate arrival times, optimize routes,
-                    and identify potential service improvements.
-                  </p>
-                </div>
+                ))}
               </div>
-              
+
+              {/* Key Features */}
               <h2 className="text-xl font-semibold mt-6 mb-4 text-gray-800">Key Features</h2>
-              
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start">
                   <MapPin className="h-5 w-5 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -106,98 +97,61 @@ const AboutPage = () => {
                   <span>Push notifications for bus arrivals at selected stops</span>
                 </li>
               </ul>
-              
+
+              {/* Technologies Used */}
               <h2 className="text-xl font-semibold mt-6 mb-4 text-gray-800">Technologies Used</h2>
-              
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-                <div className="bg-gray-50 p-3 rounded border border-gray-200 text-center">
-                  <p className="font-medium text-gray-800">React</p>
-                  <p className="text-xs text-gray-600">Frontend framework</p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded border border-gray-200 text-center">
-                  <p className="font-medium text-gray-800">Thingspeak</p>
-                  <p className="text-xs text-gray-600">Cloud</p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded border border-gray-200 text-center">
-                  <p className="font-medium text-gray-800">Google open source</p>
-                  <p className="text-xs text-gray-600">Object detection</p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded border border-gray-200 text-center">
-                  <p className="font-medium text-gray-800">GPS neo 6M</p>
-                  <p className="text-xs text-gray-600">GPS module</p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded border border-gray-200 text-center">
-                  <p className="font-medium text-gray-800">Google Map</p>
-                  <p className="text-xs text-gray-600">Mapping library</p>
-                </div>
-                <div className="bg-gray-50 p-3 rounded border border-gray-200 text-center">
-                  <p className="font-medium text-gray-800">Web Push</p>
-                  <p className="text-xs text-gray-600">Notifications</p>
-                </div>
+                {[
+                  ['React', 'Frontend framework'],
+                  ['Thingspeak', 'Cloud'],
+                  ['Google Open Source', 'Object detection'],
+                  ['GPS neo 6M', 'GPS module'],
+                  ['Google Map', 'Mapping library'],
+                  ['Web Push', 'Notifications']
+                ].map(([tech, desc]) => (
+                  <div key={tech} className="bg-gray-50 p-3 rounded border border-gray-200 text-center">
+                    <p className="font-medium text-gray-800">{tech}</p>
+                    <p className="text-xs text-gray-600">{desc}</p>
+                  </div>
+                ))}
               </div>
-              
+
+              {/* Meet The Team */}
               <h2 className="text-xl font-semibold mt-6 mb-4 text-gray-800">Meet The Team</h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                {/* Member 1 */}
                 <div className="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                  <div className="w-30 h-30 bg-gray-200 rounded-full mx-auto mb-3">
-                  <img
-        src="https://ranjithm.netlify.app/assets/mypic-k9MameKu.jpg"
-        alt="My Profile"
-        className="w-30 h-30 rounded-full shadow-lg"
-      />
+                  <div className="w-28 h-28 bg-gray-200 rounded-full mx-auto mb-3 overflow-hidden">
+                    <img
+                      src="https://ranjithm.netlify.app/assets/mypic-k9MameKu.jpg"
+                      alt="Ranjith M"
+                      className="w-full h-full object-cover rounded-full shadow-lg"
+                    />
                   </div>
                   <h3 className="font-semibold text-gray-800">Ranjith M</h3>
-                  <p className="text-sm text-gray-600">Hardware Integration,Project Development</p>
-                  <a 
-  href="http://ranjithm.netlify.app/" 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  style={{
-    color: 'blue',
-    textDecoration: 'underline',
-    fontSize: '0.8rem',          // smaller text
-    fontFamily: '"Space Mono", monospace',  // unique monospaced font
-    fontWeight: '500'            // slightly bold
-  }}
->
-  portfolio
-</a>
-
+                  <p className="text-sm text-gray-600">Hardware Integration, Project Development</p>
+                  <a
+                    href="http://ranjithm.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 text-sm underline font-mono font-medium"
+                  >
+                    portfolio
+                  </a>
                 </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+
+                {/* Member 2 */}
                 <div className="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                  <div className="w-30 h-30 bg-gray-200 rounded-full mx-auto mb-3">
-                  <img
-        src={Ezhil}
-        alt="My Profile"
-        className="w-30 h-30 rounded-full shadow-lg"
-      />
+                  <div className="w-28 h-28 bg-gray-200 rounded-full mx-auto mb-3 overflow-hidden">
+                    <img
+                      src={Ezhil}
+                      alt="Ezhilarasu S"
+                      className="w-full h-full object-cover rounded-full shadow-lg"
+                    />
                   </div>
                   <h3 className="font-semibold text-gray-800">Ezhilarasu S</h3>
                   <p className="text-sm text-gray-600">Project Report Writer</p>
-                  {/* <a 
-  href="http://ranjithm.netlify.app/" 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  style={{
-    color: 'blue',
-    textDecoration: 'underline',
-    fontSize: '0.8rem',          // smaller text
-    fontFamily: '"Space Mono", monospace',  // unique monospaced font
-    fontWeight: '500'            // slightly bold
-  }}
->
-  portfolio
-</a> */}
-
                 </div>
-                {/* <div className="bg-white p-4 rounded-lg border border-gray-200 text-center">
-                  <div className="w-20 h-20 bg-gray-200 rounded-full mx-auto mb-3"></div>
-                  <h3 className="font-semibold text-gray-800">Ezhilarasu </h3>
-                  <p className="text-sm text-gray-600">Project Report writer</p>
-                </div> */}
-               
               </div>
             </div>
           </div>
